@@ -8,6 +8,7 @@ namespace Client
     {
         static void Main(string[] args)
         {
+			System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
             var response = GetClientToken();
             CallApi(response);
 
